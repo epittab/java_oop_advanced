@@ -16,6 +16,56 @@ public class Hamburger {
         this.meat = meat;
     }
 
+    public double getPricing() {
+        return pricing;
+    }
+
+    public String getBread() {
+        return bread;
+    }
+
+    public String getMeat() {
+        return meat;
+    }
+
+    public Additional getAddOne() {
+        return addOne;
+    }
+    
+
+    public Additional getAddTwo() {
+        return addTwo;
+    }
+
+    public Additional getAddThree() {
+        return addThree;
+    }
+
+    public Additional getAddFour() {
+        return addFour;
+    }
+
+    public void setAddOne(Additional addOne) {
+        this.addOne = addOne;
+    }
+    public void setAddTwo(Additional addTwo) {
+        this.addTwo = addTwo;
+    }
+    public void setAddThree(Additional addThree) {
+        this.addThree = addThree;
+    }
+    public void setAddFour(Additional addFour) {
+        this.addFour = addFour;
+    }
+    
+    public int getItemsAdded() {
+        return itemsAdded;
+    }
+
+    public void setItemsAdded(int itemsAdded) {
+        this.itemsAdded = itemsAdded;
+    }
+
     public String additionalItem(Additional addition){
         switch(itemsAdded){
             case 0:
@@ -31,7 +81,7 @@ public class Hamburger {
                 this.addFour = addition;
                 break;
             default:
-                return "Cannot add more toppings.";
+                return "Cannot add more items.";
         }
         this.itemsAdded++;
         return addition.getName() + " successfully added to burger.";
