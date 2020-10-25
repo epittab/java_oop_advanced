@@ -10,11 +10,27 @@ public class Main {
         String lettuce = "Lettuce";
         String cheese = "Cheese";
         String bacon = "Bacon";
+
         Hamburger hamburger1 = new Hamburger(9.99, white, beef);
-        Hamburger hamburger2 = new Hamburger(9.99, white, beef, new Additional(0.99, lettuce));
-        Hamburger hamburger3 = new Hamburger(9.99, white, beef, new Additional(0.99, lettuce), new Additional(1.99, tomato));
-        Hamburger hamburger4 = new Hamburger(9.99, white, beef, new Additional(0.99, lettuce), new Additional(1.99, tomato), new Additional(1.99, cheese) );
-        Hamburger hamburger5 = new Hamburger(9.99, white, beef, new Additional(0.99, lettuce), new Additional(1.99, tomato), new Additional(1.99, cheese), new Additional(1.99, bacon));
+
+        Hamburger hamburger2 = new Hamburger(9.99, "Multigrain", beef);
+        hamburger2.additionalItem( new Additional(0.99, lettuce));
+
+        Hamburger hamburger3 = new Hamburger(9.99, white, beef);
+        hamburger3.additionalItem( new Additional(1.99, tomato) );
+        hamburger3.additionalItem( new Additional(0.99, lettuce) );
+
+        Hamburger hamburger4 = new Hamburger(9.99, white, beef);
+        hamburger4.additionalItem( new Additional(1.99, tomato) );
+        hamburger4.additionalItem( new Additional(0.99, lettuce) );
+        hamburger4.additionalItem( new Additional(1.99, cheese) );
+        
+        Hamburger hamburger5 = new Hamburger(9.99, white, beef);
+        hamburger5.additionalItem( new Additional(1.99, tomato) );
+        hamburger5.additionalItem( new Additional(0.99, lettuce) );
+        hamburger5.additionalItem( new Additional(1.99, cheese) );
+        System.out.println(hamburger5.additionalItem( new Additional(1.99, bacon) ));
+        System.out.println(hamburger5.additionalItem( new Additional(1.99, bacon) ));
         
         System.out.println(hamburger1.getItems());
         System.out.println("The total price " + hamburger1.getTotalPrice());

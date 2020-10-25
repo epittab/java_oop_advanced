@@ -16,44 +16,25 @@ public class Hamburger {
         this.meat = meat;
     }
 
-    public Hamburger(double pricing, String bread, String meat, Additional addOne) {
-        this.pricing = pricing;
-        this.bread = bread;
-        this.meat = meat;
-        this.itemsAdded = 1;
-        this.addOne = addOne;
-    }
-
-    public Hamburger(double pricing, String bread, String meat, Additional addOne, Additional addTwo) {
-        this.pricing = pricing;
-        this.bread = bread;
-        this.meat = meat;
-        this.itemsAdded = 2;
-        this.addOne = addOne;
-        this.addTwo = addTwo;
-    }
-
-    public Hamburger(double pricing, String bread, String meat, Additional addOne, Additional addTwo,
-            Additional addThree) {
-        this.pricing = pricing;
-        this.bread = bread;
-        this.meat = meat;
-        this.itemsAdded = 3;
-        this.addOne = addOne;
-        this.addTwo = addTwo;
-        this.addThree = addThree;
-    }
-
-    public Hamburger(double pricing, String bread, String meat, Additional addOne, Additional addTwo,
-            Additional addThree, Additional addFour) {
-        this.pricing = pricing;
-        this.bread = bread;
-        this.meat = meat;
-        this.itemsAdded = 4;
-        this.addOne = addOne;
-        this.addTwo = addTwo;
-        this.addThree = addThree;
-        this.addFour = addFour;
+    public String additionalItem(Additional addition){
+        switch(itemsAdded){
+            case 0:
+                this.addOne = addition;
+                break;
+            case 1:
+                this.addTwo = addition;
+                break;
+            case 2:
+                this.addThree = addition;
+                break;
+            case 3:
+                this.addFour = addition;
+                break;
+            default:
+                return "Cannot add more toppings.";
+        }
+        this.itemsAdded++;
+        return addition.getName() + " successfully added to burger.";
     }
 
     public double getTotalPrice() {
